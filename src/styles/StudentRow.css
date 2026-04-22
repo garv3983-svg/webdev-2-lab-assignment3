@@ -1,0 +1,202 @@
+/* ── Student Row ── */
+.student-row {
+  animation: slide-in 0.3s ease both;
+}
+
+.student-row td {
+  padding: 16px 20px;
+  vertical-align: middle;
+}
+
+/* Rank Column */
+.td-rank {
+  width: 56px;
+}
+
+.rank-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.rank-badge.top-1 {
+  background: linear-gradient(135deg, #ffd700, #ffaa00);
+  border-color: #ffd700;
+  color: #000;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.35);
+}
+.rank-badge.top-2 {
+  background: linear-gradient(135deg, #c0c0c0, #a0a0a0);
+  border-color: #c0c0c0;
+  color: #000;
+}
+.rank-badge.top-3 {
+  background: linear-gradient(135deg, #cd7f32, #a0522d);
+  border-color: #cd7f32;
+  color: #fff;
+}
+
+/* Name Column */
+.td-name {}
+
+.student-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* Score Column */
+.td-score {
+  width: 200px;
+}
+
+.score-edit-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.score-input {
+  width: 80px;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 6px 10px;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -moz-appearance: textfield;
+}
+
+.score-input::-webkit-outer-spin-button,
+.score-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.score-input:focus {
+  border-color: var(--accent-teal);
+  box-shadow: 0 0 0 3px rgba(0, 230, 200, 0.12);
+}
+
+.btn-update {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-update:hover {
+  border-color: var(--accent-teal);
+  color: var(--accent-teal);
+  background: rgba(0, 230, 200, 0.06);
+}
+
+.btn-update.saved {
+  border-color: var(--pass-color);
+  color: var(--pass-color);
+  animation: pulse-ring 0.6s ease;
+}
+
+/* Status Column */
+.td-status {
+  text-align: center;
+  width: 100px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 99px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+.status-badge.pass {
+  background: var(--pass-bg);
+  color: var(--pass-color);
+  border-color: rgba(0, 230, 160, 0.25);
+}
+
+.status-badge.fail {
+  background: var(--fail-bg);
+  color: var(--fail-color);
+  border-color: rgba(255, 77, 109, 0.25);
+}
+
+.status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Score bar */
+.score-bar-wrapper {
+  margin-top: 5px;
+  height: 2px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+  width: 80px;
+}
+
+.score-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+.score-bar-fill.pass { background: var(--pass-color); }
+.score-bar-fill.fail { background: var(--fail-color); }
+
+/* Delete btn */
+.td-actions {
+  width: 48px;
+  text-align: center;
+}
+
+.btn-delete {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.btn-delete:hover {
+  background: var(--fail-bg);
+  color: var(--fail-color);
+}

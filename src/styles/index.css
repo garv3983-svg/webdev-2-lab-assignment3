@@ -1,0 +1,106 @@
+/* ── CSS Variables ── */
+:root {
+  --bg-base:        #080c14;
+  --bg-surface:     rgba(255, 255, 255, 0.04);
+  --bg-surface-2:   rgba(255, 255, 255, 0.07);
+  --border:         rgba(255, 255, 255, 0.08);
+  --border-bright:  rgba(0, 230, 200, 0.35);
+
+  --accent-teal:    #00e6c8;
+  --accent-orange:  #ff6b35;
+  --accent-purple:  #a259ff;
+
+  --text-primary:   #eef2ff;
+  --text-secondary: #8892aa;
+  --text-muted:     #4a5568;
+
+  --pass-color:     #00e6a0;
+  --pass-bg:        rgba(0, 230, 160, 0.1);
+  --fail-color:     #ff4d6d;
+  --fail-bg:        rgba(255, 77, 109, 0.1);
+
+  --font-display:   'Syne', sans-serif;
+  --font-mono:      'JetBrains Mono', monospace;
+
+  --radius-sm:      6px;
+  --radius-md:      12px;
+  --radius-lg:      20px;
+  --shadow-glow:    0 0 40px rgba(0, 230, 200, 0.08);
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-mono);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 230, 200, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90% 80%, rgba(162, 89, 255, 0.06) 0%, transparent 60%);
+}
+
+/* ── Grid Overlay ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── App Layout ── */
+.app-wrapper {
+  min-height: 100vh;
+  padding: 0 0 80px;
+}
+
+.app-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 3px; }
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(0,230,200,0.4); }
+  70%  { box-shadow: 0 0 0 10px rgba(0,230,200,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,230,200,0); }
+}
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
